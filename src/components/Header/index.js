@@ -1,5 +1,8 @@
 import React from 'react';
 import s from './styles.module.css';
+import MenuItem from "../MenuItem";
+
+const MENU = ['Menu 1', 'Menu 2', 'Menu 3', 'Menu 4'];
 
 const Header = () => {
     return (
@@ -8,10 +11,11 @@ const Header = () => {
                 <div className={s.container}>
                     <div className={s.logo} />
                     <ul className={s.nav}>
-                        <li><a href="#">Menu 1</a></li>
-                        <li><a href="#">Menu 2</a></li>
-                        <li><a href="#">Menu 3</a></li>
-                        <li><a href="#">Menu 4</a></li>
+                        {
+                            MENU.map((item, index) => (
+                                <MenuItem key={index} itemName={item} />
+                            ))
+                        }
                     </ul>
                 </div>
             </div>
