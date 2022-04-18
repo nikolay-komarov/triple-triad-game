@@ -9,7 +9,7 @@ export const Slider = () => {
         <section className={s.section}>
             <div className={s.slider}>
                 <Container className={s.sliderContent}>
-                    <Heading level={2} className={s.header}>WOW</Heading>
+                    <Heading level={2} className={s.header} backLine>WOW</Heading>
                     <img
                         src={logo}
                         alt="logo"

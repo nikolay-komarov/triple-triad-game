@@ -6,20 +6,31 @@ import s from './Heading.module.scss';
 export const Heading = ({
     level,
     className,
-    children
+    backLine,
+    children,
 }) => {
-
     return React.createElement(
         `h${level}`,
         {
-            className: cn(s.root, className, s[`h${level}`])
+            className: cn(
+                s.root,
+                className,
+                s[`h${level}`], {
+                    [s.backLine]: backLine,
+                })
         },
         children
     );
 };
 
+Heading.defaultProps = {
+    level: 1,
+    backLine: false,
+};
+
 Heading.propTypes = {
     level: PropTypes.oneOf([1, 2, 3, 4, 5]).isRequired,
     className: PropTypes.string,
+    backLine: PropTypes.bool,
     children: PropTypes.node,
 };
