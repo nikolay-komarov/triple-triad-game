@@ -2,7 +2,7 @@ import React from 'react';
 import Container from '../Container';
 import Heading from '../Heading';
 import logo from '../../assets/logo.png';
-import s from './Slider.module.css';
+import s from './Slider.module.scss';
 
 export const Slider = () => {
     return (
