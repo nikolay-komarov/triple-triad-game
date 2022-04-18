@@ -1,6 +1,6 @@
 import React from 'react';
-import MenuItem from "../MenuItem";
-import Container from "../Container";
+import MenuItem from '../MenuItem';
+import Container from '../Container';
 import logo from '../../assets/logo.png';
 import s from './Header.module.css';
 
@@ -11,14 +11,17 @@ export const Header = () => {
         <header className={s.root}>
             <div className={s.header}>
                 <Container>
-                    <div
-                        className={s.logo}
-                        style={{
-                            backgroundImage: `url(${logo})`,
-                            backgroundSize: 'contain',
-                            backgroundRepeat: 'no-repeat',
-                        }}
-                    />
+                    <div className={s.logo}>
+                        <img
+                            src={logo}
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'contain',
+                            }}
+                            alt="logo"
+                        />
+                    </div>
                     <ul className={s.nav}>
                         {
                             MENU.map((item, index) => (

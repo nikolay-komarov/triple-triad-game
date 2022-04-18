@@ -10,7 +10,7 @@ const App = () => {
             <Header />
             <Slider />
             <Text
-                element='p'
+                element="p"
                 strong
                 italic
                 disable
