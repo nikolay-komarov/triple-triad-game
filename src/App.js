@@ -4,6 +4,7 @@ import Slider from './components/Slider';
 import Footer from './components/Footer';
 import Container from './components/Container';
 import Heading from './components/Heading';
+import CharacterCard from './components/CharacterCard';
 import s from './App.module.scss';
 
 const App = () => {
@@ -22,10 +23,9 @@ const App = () => {
                         </Heading>
                     </div>
                     <div className={s.cardWrapper}>
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                        <div>4</div>
+                        <div><CharacterCard /></div>
+                        <div><CharacterCard /></div>
+                        <div><CharacterCard /></div>
                     </div>
                 </Container>
             </section>

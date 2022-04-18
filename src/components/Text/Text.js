@@ -29,7 +29,7 @@ export const Text = ({
 };
 
 Text.defaultProps = {
-    element: 'div',
+    element: 'p',
 }
 
 Text.propTypes = {
