@@ -8,14 +8,18 @@ import s from './CharacterCard.module.scss';
 // todo: add s.readBio
 
 export const CharacterCard = ({
-    id, // todo: add
+    id,
     name,
     src,
     description,
     humanName,
 }) => {
+    const handleClick = () => console.log('### click', id);
+
     return (
-        <div className={s.root}>
+        <div className={s.root}
+            onClick={handleClick}
+        >
             <img
                 className={s.cardImage}
                 src={src}
