@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from './components/Header';
 import Slider from './components/Slider';
 import Footer from './components/Footer';
@@ -71,6 +71,21 @@ const CHARACTERS = [
 ];
 
 const App = () => {
+    const [characters, setCharacters] = useState(CHARACTERS);
+    const handleLikeClick = (id) => {
+        setCharacters([
+            ...characters.map(item => {
+                if (item.id === id) {
+                    return {
+                        ...item,
+                        isLike: !item.isLike
+                    }
+                }
+                return item;
+            })
+        ]);
+    };
+
     return (
         <>
             <Header />
@@ -87,8 +102,8 @@ const App = () => {
                     </div>
                     <div className={s.cardWrapper}>
                         {
-                            CHARACTERS.map(item => (
-                                <div key={item.id}><CharacterCard src={item.thumbnail.path} {...item}/></div>
+                            characters.map(item => (
+                                <div key={item.id}><CharacterCard src={item.thumbnail.path} onLikeClick={handleLikeClick} {...item}/></div>
                             ))
                         }
                     </div>
