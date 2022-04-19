@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {ReactComponent as HeartLogo} from './assets/heart.svg';
 import Heading from '../Heading';
 import Text from '../Text';
+import cn from 'classnames';
 import s from './CharacterCard.module.scss';
 
 // todo: add s.readBio
@@ -14,12 +15,11 @@ export const CharacterCard = ({
     description,
     humanName,
 }) => {
-    const handleClick = () => console.log('### click', id);
+    const [like, setLike] = useState(false);
+    const handleLikeClick = () => setLike(prev => !prev);
 
     return (
-        <div className={s.root}
-            onClick={handleClick}
-        >
+        <div className={s.root}>
             <img
                 className={s.cardImage}
                 src={src}
@@ -42,7 +42,7 @@ export const CharacterCard = ({
                     {description}
                 </Text>
                 <div className={s.cardMeta}>
-                    <div className={s.like}>
+                    <div className={cn(s.like, {[s.active]: like})} onClick={handleLikeClick}>
                         <HeartLogo />
                     </div>
                     <div className={s.readBio}>
