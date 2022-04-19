@@ -51,7 +51,7 @@ export const CharacterCard = ({
 };
 
 CharacterCard.propTypes = {
-    id: PropTypes.string,
+    id: PropTypes.number,
     name: PropTypes.string,
     src: PropTypes.string,
     description: PropTypes.string,
