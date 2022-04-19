@@ -103,7 +103,13 @@ const App = () => {
                     <div className={s.cardWrapper}>
                         {
                             characters.map(item => (
-                                <div key={item.id}><CharacterCard src={item.thumbnail.path} onLikeClick={handleLikeClick} {...item}/></div>
+                                <div key={item.id}>
+                                    <CharacterCard
+                                        src={item.thumbnail.path}
+                                        onLikeClick={handleLikeClick}
+                                        {...item}
+                                    />
+                                </div>
                             ))
                         }
                     </div>

@@ -17,7 +17,7 @@ export const CharacterCard = ({
     isLike,
     onLikeClick,
 }) => {
-    const handleLikeClick = () => onLikeClick(id);
+    const handleLikeClick = () => onLikeClick && onLikeClick(id);
 
     return (
         <div className={s.root}>
