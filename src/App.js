@@ -73,8 +73,8 @@ const CHARACTERS = [
 const App = () => {
     const [characters, setCharacters] = useState(CHARACTERS);
     const handleLikeClick = (id) => {
-        setCharacters([
-            ...characters.map(item => {
+        setCharacters(prev => [
+            ...prev.map(item => {
                 if (item.id === id) {
                     return {
                         ...item,

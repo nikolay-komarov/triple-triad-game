@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Container from '../Container';
 import Heading from '../Heading';
+import Button from "../Button";
 import logo from '../../assets/logo.png';
 import s from './Slider.module.scss';
 
@@ -24,7 +25,7 @@ export const Slider = () => {
                     />
                     <Heading level={3} className={s.subheader}>{value}</Heading>
                     <div className={s.call}>
-                        <button className={s.button} onClick={handleClick}>WOW</button>
+                        <Button variant="transparent" onClick={handleClick}>WOW</Button>
                     </div>
                 </Container>
             </div>
