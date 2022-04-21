@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Container from './components/Container';
 import Heading from './components/Heading';
 import CharacterCard from './components/CharacterCard';
+import Biography from './pages/Biography';
 import s from './App.module.scss';
 
 const CHARACTERS = [
@@ -71,6 +72,7 @@ const CHARACTERS = [
 ];
 
 const App = () => {
+    const [showedIdCharacter, setShowedIdCharacter] = useState(null);
     const [characters, setCharacters] = useState(CHARACTERS);
     const handleLikeClick = (id) => {
         setCharacters(prev => [
@@ -86,35 +88,58 @@ const App = () => {
         ]);
     };
 
+    const handleReadBioClick = (id) => {
+        setShowedIdCharacter(id);
+    };
+    const handleBackClick = () => {
+        setShowedIdCharacter(null);
+    };
+
+    const getCharacterBioPage = (id) => (
+        <Biography
+            id={id}
+            onBackClick={handleBackClick}
+        />
+    );
+
     return (
         <>
             <Header />
-            <Slider />
-            <section className={s.cardSection}>
-                <Container>
-                    <div className={s.cardTitle}>
-                        <Heading backLine>
-                            Marvel Cards
-                        </Heading>
-                        <Heading level={2}>
-                            Collect your best five cards
-                        </Heading>
-                    </div>
-                    <div className={s.cardWrapper}>
-                        {
-                            characters.map(item => (
-                                <div key={item.id}>
-                                    <CharacterCard
-                                        src={item.thumbnail.path}
-                                        onLikeClick={handleLikeClick}
-                                        {...item}
-                                    />
+            {
+                showedIdCharacter
+                ? getCharacterBioPage(showedIdCharacter)
+                : (
+                    <>
+                        <Slider />
+                        <section className={s.cardSection}>
+                            <Container>
+                                <div className={s.cardTitle}>
+                                    <Heading backLine>
+                                        Marvel Cards
+                                    </Heading>
+                                    <Heading level={2}>
+                                        Collect your best five cards
+                                    </Heading>
                                 </div>
-                            ))
-                        }
-                    </div>
-                </Container>
-            </section>
+                                <div className={s.cardWrapper}>
+                                    {
+                                        characters.map(item => (
+                                            <div key={item.id}>
+                                                <CharacterCard
+                                                    src={item.thumbnail.path}
+                                                    onLikeClick={handleLikeClick}
+                                                    onReadBioClick={handleReadBioClick}
+                                                    {...item}
+                                                />
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+                            </Container>
+                        </section>
+                    </>
+                )
+            }
             <Footer />
         </>
     );
