@@ -14,11 +14,6 @@ export const Header = () => {
                     <div className={s.logo}>
                         <img
                             src={logo}
-                            style={{
-                                width: '100%',
-                                height: '100%',
-                                objectFit: 'contain',
-                            }}
                             alt="logo"
                         />
                     </div>

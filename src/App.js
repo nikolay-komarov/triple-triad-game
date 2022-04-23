@@ -73,8 +73,7 @@ const CHARACTERS = [
 const App = () => {
     const [characters, setCharacters] = useState(CHARACTERS);
     const handleLikeClick = (id) => {
-        setCharacters([
-            ...characters.map(item => {
+        setCharacters(prevState => prevState.map(item => {
                 if (item.id === id) {
                     return {
                         ...item,
@@ -83,7 +82,7 @@ const App = () => {
                 }
                 return item;
             })
-        ]);
+        );
     };
 
     return (

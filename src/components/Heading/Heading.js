@@ -15,9 +15,10 @@ export const Heading = ({
             className: cn(
                 s.root,
                 className,
-                s[`h${level}`], {
+                s[`level${level}`], {
                     [s.backLine]: backLine,
-                })
+                },
+            )
         },
         children
     );
