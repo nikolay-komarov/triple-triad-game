@@ -75,8 +75,7 @@ const App = () => {
     const [showedIdCharacter, setShowedIdCharacter] = useState(null);
     const [characters, setCharacters] = useState(CHARACTERS);
     const handleLikeClick = (id) => {
-        setCharacters(prev => [
-            ...prev.map(item => {
+        setCharacters(prevState => prevState.map(item => {
                 if (item.id === id) {
                     return {
                         ...item,
@@ -85,7 +84,7 @@ const App = () => {
                 }
                 return item;
             })
-        ]);
+        );
     };
 
     const handleReadBioClick = (id) => {
