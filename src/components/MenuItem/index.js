@@ -1,9 +1,3 @@
-import React from 'react';
-
-const MenuItem = ({itemName}) => {
-    return (
-        <li><a href="#">{itemName}</a></li>
-    );
-};
+import {MenuItem} from './MenuItem';
 
 export default MenuItem;
