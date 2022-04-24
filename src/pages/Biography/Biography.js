@@ -2,14 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../../components/Button';
 import Container from '../../components/Container';
-import Heading from "../../components/Heading";
-import Text from "../../components/Text";
+import Heading from '../../components/Heading';
+import Text from '../../components/Text';
 import {BIO} from '../../mocks/bio';
 import s from './Biography.module.scss';
-
-const getBioById = (bio, id) => {
-    return bio[id];
-};
 
 const getElement = (el) => {
     switch (el.type) {
@@ -26,21 +22,19 @@ const getElement = (el) => {
 
 export const Biography = ({id, onBackClick}) => {
     const getContent = () => {
-        const bioById = getBioById(BIO, id);
+        const bioById = BIO[id];
 
         if (!bioById) return <Text>nothing here...</Text>;
 
-        return (
-            <>
-                {getBioById(BIO, id).map((item, idx) => <React.Fragment key={idx}>{getElement(item)}</React.Fragment>)}
-            </>
-        );
+        return bioById.map((item, idx) => <React.Fragment key={idx}>{getElement(item)}</React.Fragment>)
     };
+
+    const handleBackClick = () => onBackClick(null);
 
     return (
         <div className={s.root}>
             <div className={s.buttonWrapper}>
-                <Button variant="white" onClick={onBackClick}>Go back</Button>
+                <Button variant="white" onClick={handleBackClick}>Go back</Button>
             </div>
             <Container className={s.contentWrapper}>
                 {getContent()}
