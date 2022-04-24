@@ -9,11 +9,7 @@ import s from './Biography.module.scss';
 
 const getElement = (el) => {
     switch (el.type) {
-        case 'h1': return (<Heading level={1}>{el.text}</Heading>);
-        case 'h2': return (<Heading level={2}>{el.text}</Heading>);
-        case 'h3': return (<Heading level={3}>{el.text}</Heading>);
-        case 'h4': return (<Heading level={4}>{el.text}</Heading>);
-        case 'h5': return (<Heading level={5}>{el.text}</Heading>);
+        case ('h1' || 'h2' || 'h3' || 'h4' || 'h5'): return (<Heading level={Number(el.type.charAt(1))}>{el.text}</Heading>);
         case 'paragraph': return (<Text>{el.text}</Text>);
         case 'img': return (<div className={s.imgWrapper}><img src={el.src} alt="hero pic"/></div>);
         default: return null;
