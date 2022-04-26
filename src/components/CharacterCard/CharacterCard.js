@@ -16,8 +16,10 @@ export const CharacterCard = ({
     humanName,
     isLike,
     onLikeClick,
+    onReadBioClick,
 }) => {
     const handleLikeClick = () => onLikeClick && onLikeClick(id);
+    const handleReadBioClick = () => onReadBioClick && onReadBioClick(id);
 
     return (
         <div className={s.root}>
@@ -47,7 +49,7 @@ export const CharacterCard = ({
                         <HeartLogo />
                     </div>
                     <div className={s.readBio}>
-                        <a href="#">Read bio</a>
+                        <a href="#" onClick={handleReadBioClick}>Read bio</a>
                     </div>
                 </div>
             </div>
@@ -67,4 +69,5 @@ CharacterCard.propTypes = {
     humanName: PropTypes.string,
     isLike: PropTypes.bool,
     onLikeClick: PropTypes.func,
+    onReadBioClick: PropTypes.func,
 };
