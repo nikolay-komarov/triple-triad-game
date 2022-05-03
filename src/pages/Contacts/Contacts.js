@@ -15,9 +15,9 @@ export const Contacts = () => {
                 <Brick />
                 <Heading level={3}>contacts:</Heading>
                 <Brick />
-                <a href="https://github.com/nikolay-komarov">github.com/nikolay-komarov</a>
+                <a href="https://github.com/nikolay-komarov" target="_blank">github.com/nikolay-komarov</a>
                 <Brick />
-                <a href="https://career.habr.com/kny-komarov" >career.habr.com/kny-komarov</a>
+                <a href="https://career.habr.com/kny-komarov" target="_blank">career.habr.com/kny-komarov</a>
                 <Brick />
             </Container>
         </div>

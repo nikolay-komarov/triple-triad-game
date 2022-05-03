@@ -1,12 +1,15 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom';
 import Container from '../Container';
 import Heading from '../Heading';
 import Button from "../Button";
-import {dummy} from '../../utils/helper';
 import logo from '../../assets/logo.png';
 import s from './Slider.module.scss';
 
 export const Slider = () => {
+    const navigate = useNavigate();
+    const handlerMainClick = () => navigate('/characters');
+
     return (
         <section className={s.section}>
             <div className={s.slider}>
@@ -19,7 +22,7 @@ export const Slider = () => {
                         height="360"
                     />
                     <div className={s.call}>
-                        <Button variant="transparent" onClick={dummy}>WOW</Button>
+                        <Button variant="transparent" onClick={handlerMainClick}>WOW</Button>
                     </div>
                 </Container>
             </div>
