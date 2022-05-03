@@ -1,7 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
-export const MenuItem = ({itemName}) => {
+export const MenuItem = ({itemLink, itemName}) => {
     return (
-        <li><a href="#">{itemName}</a></li>
+        <li><Link to={itemLink}>{itemName}</Link></li>
     );
+};
+
+MenuItem.propTypes = {
+    itemLink: PropTypes.string,
+    itemName: PropTypes.string,
 };

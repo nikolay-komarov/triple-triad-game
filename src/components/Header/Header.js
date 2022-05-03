@@ -4,7 +4,7 @@ import Container from '../Container';
 import logo from '../../assets/logo.png';
 import s from './Header.module.scss';
 
-const MENU = ['Menu 1', 'Menu 2', 'Menu 3', 'Menu 4'];
+import {MENU} from '../../constants/menu';
 
 export const Header = () => {
     return (
@@ -20,7 +20,7 @@ export const Header = () => {
                     <ul className={s.nav}>
                         {
                             MENU.map((item, index) => (
-                                <MenuItem key={index} itemName={item} />
+                                <MenuItem key={index} itemLink={item.link} itemName={item.title} />
                             ))
                         }
                     </ul>
