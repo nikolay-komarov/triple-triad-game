@@ -4,15 +4,15 @@ export const MENU = [
         link: '/',
     },
     {
-        title: 'Bio',
-        link: 'bio',
+        title: 'Characters',
+        link: 'characters',
     },
     {
-        title: 'Menu 3',
-        link: '/',
+        title: 'Contacts',
+        link: 'contacts',
     },
     {
-        title: 'Menu 4',
-        link: '/',
+        title: 'About Game',
+        link: 'about',
     },
 ];

@@ -1,7 +1,7 @@
 import React from 'react';
-import s from './Character.module.scss';
+import s from './Characters.module.scss';
 
-export const Character = () => {
+export const Characters = () => {
     return (
         <div className={s.root}>
             CharacterPage
