@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Button from '../../components/Button';
+import {useParams} from 'react-router-dom';
 import Container from '../../components/Container';
 import Heading from '../../components/Heading';
 import Text from '../../components/Text';
@@ -16,7 +15,8 @@ const getElement = (el) => {
     }
 };
 
-export const Biography = ({id, onBackClick}) => {
+export const Biography = () => {
+    const {id} = useParams();
     const getContent = () => {
         const bioById = BIO[id];
 
@@ -25,21 +25,11 @@ export const Biography = ({id, onBackClick}) => {
         return bioById.map((item, idx) => <React.Fragment key={idx}>{getElement(item)}</React.Fragment>)
     };
 
-    const handleBackClick = () => onBackClick(null);
-
     return (
         <div className={s.root}>
-            <div className={s.buttonWrapper}>
-                <Button variant="white" onClick={handleBackClick}>Go back</Button>
-            </div>
             <Container className={s.contentWrapper}>
                 {getContent()}
             </Container>
         </div>
     );
-};
-
-Biography.propTypes = {
-    id: PropTypes.number.isRequired,
-    onBackClick: PropTypes.func,
 };

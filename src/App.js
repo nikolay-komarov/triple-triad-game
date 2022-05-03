@@ -15,7 +15,7 @@ const App = () => {
                 <Route exec path="characters" element={<Characters />} />
                 <Route exec path="contacts" element={<Contacts />} />
                 <Route exec path="about" element={<AboutGame />} />
-                <Route exec path="bio" element={<Biography id={1011334}/>}/>
+                <Route exec path="bio/:id" element={<Biography />}/>
             </Route>
         </Routes>
     );
