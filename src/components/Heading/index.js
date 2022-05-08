@@ -1,3 +1,3 @@
-import {Heading} from './Heading';
+import {Heading} from './styled';
 
 export default Heading;

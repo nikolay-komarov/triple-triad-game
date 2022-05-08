@@ -1,31 +1,28 @@
 import React from 'react';
+import styled from 'styled-components';
+import {space} from 'styled-system';
 import PropTypes from 'prop-types';
-import cn from 'classnames';
-import s from './Text.module.css';
+import {StyledText} from './styled';
 
 export const Text = ({
-    element,
-    className,
-    strong,
-    italic,
-    disable,
-    children,
+   element,
+   className,
+   strong,
+   italic,
+   disable,
+   children,
 }) => {
-    return React.createElement(
-        `${element}`,
-            {
-                className: cn(
-                    s.root,
-                    className,
-                    {
-                        [s.strong]: strong,
-                        [s.italic]: italic,
-                        [s.disable]: disable,
-                    }
-                ),
-            },
-            children
-        );
+    return (
+        <StyledText
+            className={className}
+            as={element}
+            strong={strong}
+            italic={italic}
+            disable={disable}
+        >
+            {children}
+        </StyledText>
+    );
 };
 
 Text.defaultProps = {
@@ -40,3 +37,7 @@ Text.propTypes = {
     disable: PropTypes.bool,
     children: PropTypes.node,
 };
+
+export const SpacedText = styled(Text)`
+  ${space}
+`;

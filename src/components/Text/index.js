@@ -1,3 +1,3 @@
-import {Text} from './Text';
+import {SpacedText as Text} from './Text';
 
 export default Text;
