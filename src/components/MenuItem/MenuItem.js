@@ -1,10 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
+import s from './MenuItem.module.scss';
 
 export const MenuItem = ({itemLink, itemName}) => {
     return (
-        <li><Link to={itemLink}>{itemName}</Link></li>
+        <li className={s.root}>
+            <NavLink
+                to={itemLink}
+                className={({isActive}) => {
+                    return !!isActive ? s.active : null;
+                }}
+            >
+                {itemName}
+            </NavLink>
+        </li>
     );
 };
 

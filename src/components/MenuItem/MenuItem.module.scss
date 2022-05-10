@@ -1,0 +1,22 @@
+.root {
+  float: left;
+  position: relative;
+
+  &:hover a {
+    color: red;
+  }
+
+  & a {
+    padding: 21px;
+    color: initial;
+    text-decoration: initial;
+    transition: color 0.2s linear;
+    font-size: 18px;
+
+    &.active {
+      color: red;
+    }
+  }
+}
+
+
