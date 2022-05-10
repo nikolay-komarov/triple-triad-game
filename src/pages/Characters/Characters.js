@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
 import Container from '../../components/Container';
 import Heading from '../../components/Heading';
 import CharacterCard from '../../components/CharacterCard';
@@ -8,7 +7,6 @@ import s from './Characters.module.scss';
 import {CHARACTERS} from '../../mocks/characters';
 
 export const Characters = () => {
-    const navigate = useNavigate();
     const [characters, setCharacters] = useState(CHARACTERS);
     const handleLikeClick = (id) => {
         setCharacters(prevState => prevState.map(item => {
@@ -22,8 +20,6 @@ export const Characters = () => {
             })
         );
     };
-
-    const handleSetShowCharacterBio = (id) => navigate(`/bio/${id}`);
 
     return (
         <section className={s.cardSection}>
@@ -43,7 +39,6 @@ export const Characters = () => {
                                 <CharacterCard
                                     src={item.thumbnail.path}
                                     onLikeClick={handleLikeClick}
-                                    onReadBioClick={handleSetShowCharacterBio}
                                     {...item}
                                 />
                             </div>
