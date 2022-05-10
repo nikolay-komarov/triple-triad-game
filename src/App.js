@@ -7,12 +7,12 @@ import Characters from './pages/Characters';
 import Contacts from './pages/Contacts';
 import AboutGame from './pages/AboutGame';
 import NotFound from './pages/NotFound';
-import {ScrollToTop} from "./components/ScrollToTop/ScrollToTop";
+import {ScrollTo} from "./components/ScrollTo/ScrollTo";
 
 const App = () => {
     return (
         <>
-            <ScrollToTop />
+            <ScrollTo />
             <Routes>
                 <Route path="/" element={<Layout/>}>
                     <Route index element={<Main />} />
