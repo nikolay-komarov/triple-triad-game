@@ -5,7 +5,7 @@ import s from './AnchorLink.module.scss';
 
 export const AnchorLink = ({headerTitle}) => {
     const location = useLocation();
-    const id = String(headerTitle).replace(/[^A-Za-z]/g, '_');
+    const id = headerTitle.replace(/[^A-Za-z]/g, '_');
 
     return (
         <div className={s.root}>

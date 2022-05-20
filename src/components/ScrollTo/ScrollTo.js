@@ -6,20 +6,18 @@ export const ScrollTo = () => {
 
     useEffect(() => {
         const onLoaded = () => {
-            const el = document.getElementById('hash');
+            const el = document.getElementById(hash.slice(1));
             el.scrollIntoView({
                 block: 'center',
                 behavior: 'smooth'
             });
         };
 
-        if (!!hash) {
-            window.addEventListener('load', onLoaded);
+        if (hash) {
+            window.addEventListener('load', onLoaded, {once: true});
         } else {
             window.scrollTo(0, 0);
         }
-
-        return window.removeEventListener('load', onLoaded);
     }, [pathname, hash]);
 
     return null;
