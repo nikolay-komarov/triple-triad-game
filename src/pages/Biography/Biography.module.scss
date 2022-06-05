@@ -4,6 +4,12 @@
   align-items: center;
 }
 
+.anchorLinkWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
 .buttonWrapper {
   padding: 32px 0;
 }

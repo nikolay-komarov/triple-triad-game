@@ -1,31 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cn from 'classnames';
-import s from './Text.module.css';
+import {StyledText} from './styled';
 
-export const Text = ({
-    element,
-    className,
-    strong,
-    italic,
-    disable,
-    children,
-}) => {
-    return React.createElement(
-        `${element}`,
-            {
-                className: cn(
-                    s.root,
-                    className,
-                    {
-                        [s.strong]: strong,
-                        [s.italic]: italic,
-                        [s.disable]: disable,
-                    }
-                ),
-            },
-            children
-        );
+export const Text = ({element, ...props}) => {
+    return <StyledText as={element} {...props} />;
 };
 
 Text.defaultProps = {
