@@ -7,6 +7,7 @@ import Characters from './pages/Characters';
 import Contacts from './pages/Contacts';
 import AboutGame from './pages/AboutGame';
 import NotFound from './pages/NotFound';
+import Login from "./pages/Login";
 import {ScrollTo} from "./components/ScrollTo/ScrollTo";
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
                     <Route exec path="bio/:id" element={<Biography />}/>
                     <Route path="*" element={<NotFound />}/>
                 </Route>
+                <Route path="/login" element={<Login />}/>
             </Routes>
         </>
     );
