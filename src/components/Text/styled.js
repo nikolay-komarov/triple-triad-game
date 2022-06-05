@@ -1,13 +1,15 @@
 import styled, {css} from 'styled-components';
+import {space} from 'styled-system';
 
 const disableStyles = css`
-  opacity: ${(props) => props.disable && 0.6};
-  cursor: ${(props) => props.disable && 'not-allowed'};
+  opacity: 0.6;
+  cursor: not-allowed;
 `;
 
 export const StyledText = styled.p`
+  ${space};
   background-color: transparent;
-  font-weight: ${(props) => props.strong && 700};
-  font-style: ${(props) => props.italic && 'italic'};
-  ${disableStyles};
+  font-weight: ${({strong}) => strong && 700};
+  font-style: ${({italic}) => italic && 'italic'};
+  ${({disable}) => disable && disableStyles}; 
 `;
